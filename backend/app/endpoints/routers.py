@@ -4,4 +4,4 @@ router = APIRouter(prefix="/api")
 
 @router.get('', tags=['Root'])
 async def root():
-    return {'message': 'Hello, World!'}
+    return {'msg': 'Hello, World!'}
