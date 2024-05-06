@@ -2,7 +2,11 @@
 *__pycache__
 *.DS_Store
 *.env
+
+*package-lock.json
+*yarn.lock
 *.pytest_cache
+
 # Logs
 logs
 *.log
