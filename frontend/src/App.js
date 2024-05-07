@@ -1,25 +1,25 @@
 import "./App.css";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PrivateRoute from "./routes/PriviteRoute";
+import PublicRoute from "./routes/PublicRoute";
+import Login from "@pages/Login";
+import MainLayout from "@layout/MainLayout";
+import NotFound from "@pages/NotFound";
 
 function App() {
-  const [message, setMessage] = useState("");
-  const getTestResponse = async () => {
-    try {
-      const response = await axios.get("http://127.0.0.1:8000/api");
-      setMessage(response?.data?.msg);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getTestResponse();
-  }, []);
   return (
-    <div className="App">
-      <h6>{message ? message : "No response yet"}</h6>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<PublicRoute />}>
+          <Route path="" element={<Login />} />
+        </Route>
+
+        <Route path="/" element={<PrivateRoute />}>
+          <Route path="" element={<MainLayout />}></Route>
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
