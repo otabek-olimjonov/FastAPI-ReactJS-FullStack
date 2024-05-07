@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "jsx": "react",
+    "paths": {
+      "~/*": ["/*"],
+      "@svg/*": ["assets/svg/*"],
+      "@img/*": ["assets/images/*"],
+      "@icons/*": ["assets/icons/*"],
+      "@shared/*": ["shared/*"],
+      "@components/*": ["components/*"],
+      "@constants/*": ["constants/*"],
+      "@hooks/*": ["hooks/*"],
+      "@layouts/*": ["layouts/*"],
+      "@locales/*": ["locales/*"],
+      "@pages/*": ["pages/*"],
+      "@routes/*": ["routes/*"],
+      "@services/*": ["services/*"],
+      "@store/*": ["store/*"],
+      "@theme/*": ["theme/*"],
+      "@utils/*": ["utils/*"],
+      "@layout/*": ["layout/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
