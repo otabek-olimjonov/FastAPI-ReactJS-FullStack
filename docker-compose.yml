@@ -21,6 +21,12 @@ services:
     build: ./backend
     container_name: backend
     restart: always
+    environment:
+      DB_HOSTNAME: postgres
+      DB_PORT: 5432
+      DB_PASSWORD: password
+      DB_NAME: fullstack
+      DB_USERNAME: postgres
     depends_on:
       - postgres
 
